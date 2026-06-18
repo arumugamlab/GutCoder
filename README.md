@@ -30,6 +30,7 @@ BiocManager::install("curatedMetagenomicData")
 - Feedforward dimension: 512
 
 ## Methodology
+![GutCoder Workflow](images/schematic.png)
 
 1. **Data Handling**
    - Species relative abundance data is assessed for data integrity
@@ -63,11 +64,12 @@ BiocManager::install("curatedMetagenomicData")
 - Struggles with the CRC task compared to standard MLP
 
 ### Cluster Composition analysis 
-
-  
+![GutCoder composition](images/GC_Cluster_composition.png)
 
 ## Future work
-
+- Advanced classifiers to improve performance eg., FourierKAN used for text classification
+- Improved benchmarks for reliable evaluations
+- Community structure across other disease (sub) types
 
 ## Citation
 Pasolli E, Schiffer L, Manghi P, Renson A, Obenchain V, Truong D, Beghini F, Malik F, Ramos M, Dowd J, Huttenhower C, Morgan M, Segata N, Waldron L (2017). “Accessible, curated metagenomic data through ExperimentHub.” Nat. Methods, 14(11), 1023–1024. ISSN 1548-7091, 1548-7105. doi:10.1038/nmeth.4468.
