@@ -10,6 +10,15 @@ GutCoder is an attention-based transformer encoder that learns community interac
 - Calculate mean attention scores and species co-attention to correlate top 15 microbial species with existing literature
 
 ## Dataset
+Species-relative abundance data from the `curatedMetagenomicData` along with its metadata is used for training GutCoder. 
+To do this, first, The `curatedMetagenomicData` package (Version 3.18.0) is installed via Bioconductor:
+
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("curatedMetagenomicData")
+```
 
 ## Methodology
 
