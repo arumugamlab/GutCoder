@@ -1,17 +1,18 @@
 # GutCoder
 
-GutCoder is an attention-based transformer encoder that learns community interactions within the gut microbiome during healthy and chronic inflammatory disease states by recovering biological signals from high dimensional, noisy relative abundance data.
 
-## Objectives
-- Develop a microbiome foundation model extensively pretrained on unlabelled species relative abundance data using a Masked Modelling approach
-- Finetune on labelled Chronic Inflammatory cohorts - IBD, T2D and CRC to distinguish from healthy conditions
-  - Implement Nested Leave-One-Study-Out Cross validation (LOSO-CV) to rigourously evaluate supervised classification tasks with a baseline Multi-Layer Perceptron (MLP)
-  - Implement unsupervised k-means clustering to visualize and interpret separation of diseases in the latent embedding space with a traditional Autoencoder
-- Calculate mean attention scores and species co-attention to correlate top 15 microbial species with existing literature
+GutCoder is an attention-based transformer encoder that learns microbial community structure in the gut during healthy and chronic inflammatory disease states from high dimensional, noisy relative abundance data.
+
+## Overview
+- GutCoder is extensively pretrained on unlabelled species relative abundance data using a Masked Modelling approach
+- It is finetuned on labelled Chronic Inflammatory cohorts - IBD, T2D and CRC to distinguish from healthy conditions
+  - Implements Nested Leave-One-Study-Out Cross validation (LOSO-CV) to rigourously evaluate supervised classification tasks with a baseline Multi-Layer Perceptron (MLP)
+  - Implements unsupervised k-means clustering to visualize and interpret separation of diseases in the latent embedding space with a traditional Autoencoder
+- Mean attention scores and species co-attention is calculated to correlate top 15 microbial species with existing literature
 
 ## Dataset
 Species-relative abundance data from the `curatedMetagenomicData` along with its metadata is used for training GutCoder. 
-To do this, first, The `curatedMetagenomicData` package (Version 3.18.0) is installed via Bioconductor:
+To do this, first, the `curatedMetagenomicData` package (Version 3.18.0) is installed via Bioconductor:
 
 ```r
 if (!require("BiocManager", quietly = TRUE))
@@ -26,4 +27,5 @@ BiocManager::install("curatedMetagenomicData")
 
 ## Concluding remarks
 
-## Key references
+## Citation
+Pasolli E, Schiffer L, Manghi P, Renson A, Obenchain V, Truong D, Beghini F, Malik F, Ramos M, Dowd J, Huttenhower C, Morgan M, Segata N, Waldron L (2017). “Accessible, curated metagenomic data through ExperimentHub.” Nat. Methods, 14(11), 1023–1024. ISSN 1548-7091, 1548-7105. doi:10.1038/nmeth.4468.
